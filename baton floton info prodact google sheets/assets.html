@@ -1,0 +1,845 @@
+﻿
+              
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#FFF">
+  <meta name="msapplication-navbutton-color" content="#FFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+
+<title>طلب المنتج</title>
+<style>
+  /* ستايلات CSS */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    direction: rtl; /* تحديد اتجاه الكتابة إلى اليمين */
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: right; /* تحديد محاذاة النص إلى اليمين */
+  }
+  input[type="text"], select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    direction: rtl; /* تحديد اتجاه الكتابة إلى اليمين */
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #cc0000;
+  }
+  .price-details {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .price-details span {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .total-price {
+    font-weight: bold;
+    color: #ff0000; /* تغيير لون النص إلى الأحمر */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+ <center> <h1>طلب المنتج</h1> </center>
+
+
+
+ 
+
+  <label for="fullName"><h3>الاسم الكامل:</h3></label>
+  <input type="text" id="fullName" placeholder="الاسم الكامل">
+
+  <label for="phoneNumber"><h3>رقم الهاتف:</h3></label>
+  <input type="text" id="phoneNumber" placeholder="رقم الهاتف">
+
+
+ 
+
+
+  <label for="state"><h3>الولاية:</h3></label>
+  <select id="state" onchange="updateCitiesAndShipping()">
+    <option value="0">اختر الولاية
+	
+	                     </option><option value="Adrar 1">
+						    1 Adrar - أدرار
+                         </option><option value="2">
+                            2 Chlef - الشلف
+                         </option><option value="3">
+                            3 Laghouat - الأغواط
+                         </option><option value="4">
+                            4 Oum El Bouaghi - أم البواقي
+                         </option><option value="5">
+                            5 Batna - باتنة
+                         </option><option value="6">
+                            6 Béjaïa - بجاية
+                         </option><option value="7">
+                            7 Biskra - بسكرة
+                         </option><option value="8">
+                            8 Bechar - بشار
+                         </option><option value="9">
+                            9 Blida - البليدة
+                         </option><option value="10">
+                            10 Bouira - البويرة 
+                         </option><option value="11">
+                            11 Tamanrasset - تمنراست
+                         </option><option value="12">
+                            12 Tébessa - تبسة
+                         </option><option value="13">
+                            13 Tlemcene - تلمسان
+                         </option><option value="14">
+                            14 Tiaret - تيارت
+                         </option><option value="15">
+                            15 Tizi Ouzou - تيزي وزو
+                         </option><option value="16">
+                            16 Alger - الجزائر
+                         </option><option value="17">
+                            17 Djelfa - الجلفة
+                         </option><option value="18">
+                            18 Jijel - جيجل
+                         </option><option value="19">
+                            19 Sétif - سطيف
+                         </option><option value="20">
+                            20 Saïda - سعيدة
+                         </option><option value="21">
+                            21 Skikda - سكيكدة
+                         </option><option value="22">
+                            22 Sidi Bel Abbès - سيدي بلعباس
+                         </option><option value="23">
+                            23 Annaba - عنابة
+                         </option><option value="24">
+                            24 Guelma - قالمة
+                         </option><option value="25">
+                            25 Constantine - قسنطينة
+                         </option><option value="26">
+                            26 Médéa - المدية
+                         </option><option value="27">
+                            27 Mostaganem - مستغانم
+                         </option><option value="28">
+                            28 MSila - مسيلة
+                         </option><option value="29">
+                            29 Mascara - معسكر
+                         </option><option value="30">
+                            30 Ouargla - ورقلة
+                         </option><option value="31">
+                            31 Oran - وهران
+                         </option><option value="32">
+                            32 El Bayadh - البيض
+                         </option><option value="33">
+                            33 Illizi - إليزي
+                         </option><option value="34">
+                            34 Bordj Bou Arreridj - برج بوعريريج
+                         </option><option value="35">
+                            35 Boumerdès - بومرداس
+                         </option><option value="36">
+                            36 El Tarf - الطارف
+                         </option><option value="37">
+                            37 Tindouf - تندوف
+                         </option><option value="38">
+                            38 Tissemsilt - تيسمسيلت
+                         </option><option value="39">
+                            39 Eloued - الوادي
+                         </option><option value="40">
+                            40 Khenchela - خنشلة
+                         </option><option value="41">
+                            41 Souk Ahras - سوق أهراس
+                         </option><option value="42">
+                            42 Tipaza - تيبازة
+                         </option><option value="43">
+                            43 Mila - ميلة
+                         </option><option value="44">
+                            44 Aïn Defla - عين الدفلى
+                         </option><option value="45">
+                            45 Naâma - النعامة
+                         </option><option value="46">
+                            46 Aïn Témouchent - عين تموشنت
+                         </option><option value="47">
+                            47 Ghardaïa - غرداية
+                         </option><option value="48">
+                            48 Relizane - غليزان
+                         </option><option value="49">
+                            49 Timimoun - تيميمون
+                         </option><option value="50">
+                            50 Bordj Baji Mokhtar - برج باجي مختار
+                         </option><option value="51">
+                            51 Ouled Djellal - أولاد جلال
+                         </option><option value="52">
+                            52 Béni Abbès -  بني عباس
+                         </option><option value="53">
+                            53 Aïn Salah - عين صالح
+                         </option><option value="54">
+                            54 In Guezzam - عين قزام
+                         </option><option value="55">
+                            55 Touggourt - تقرت
+                         </option><option value="56">
+                            56 Djanet - جانت 
+                         </option><option value="57">
+                            57 El MGhair - المغير
+                         </option><option value="58">
+                            58 El Menia - المنيعة
+                         </option>
+  </select>
+
+  <label for="city"><h3>البلدية:</h3></label>
+  <select id="city"></select>
+
+  <label for="deliveryType"><h3>اختر مكان التوصيل:</h3></label>
+  <select id="deliveryType" onchange="updateTotalPrice()">
+    <option value="منزل">سعر توصيل للمنزل</option>
+    <option value="مكتب">سعر توصيل للمكتب</option>
+  </select>
+
+  <div class="price-details">
+    <span id="productPrice"><h3>سعر المنتج: 1000 دج</h3></span>
+    <h3><span id="shippingPrice" style="display: block;">سعر توصيل للمنزل: 0 دج</span></h3>
+    <h3><span id="deliveryPrice">سعر توصيل للمكتب: 0 دج</span></h3>
+    <h3><span id="totalPrice" class="total-price">المجموع: 1000 دج</span></h3>
+  </div>
+
+
+  
+  
+    <button onclick="submitData()" class="btn btn-primary w-100" style="background-color: rgb(255, 0, 0);">اضغط هنا للطلب</button> 
+                  <div class="de elCountdownEvergreen elAlign_center elMargin0 ui-droppable de-editable" id="tmp_countdown_evergreen-12961" data-de-type="countdown-evergreen" data-de-editing="false" data-title="Minute Countdown (evergreen)" data-ce="false" data-trigger="none" data-animate="fade" data-delay="500" style="margin-top: 10px; outline: none; cursor: pointer;" data-element-theme="customized" aria-disabled="false">
+                   
+  
+</div>
+
+<script>
+  function updateCitiesAndShipping() {
+    var stateSelect = document.getElementById('state');
+    var citySelect = document.getElementById('city');
+
+    citySelect.innerHTML = ''; // إزالة الخيارات السابقة
+
+    if (stateSelect.value === 'Adrar 1') { 
+addCityOption(citySelect, 'تيمقتن' );
+addCityOption(citySelect, 'بودة' );
+addCityOption(citySelect, 'أولاد أحمد تيمي' ); 
+addCityOption(citySelect, 'أدرار' );
+addCityOption(citySelect, 'فنوغيل' );
+addCityOption(citySelect, 'إن زغمير' );
+addCityOption(citySelect, 'رقان' );
+addCityOption(citySelect, 'سالي' );
+addCityOption(citySelect, 'السبع' );
+addCityOption(citySelect, 'تسابيت' );
+addCityOption(citySelect, 'تامست' );
+addCityOption(citySelect, 'تامنطيط' );
+addCityOption(citySelect, 'تيت' );
+addCityOption(citySelect, 'زاوية كنتة' );
+addCityOption(citySelect, 'اقبلي' );
+addCityOption(citySelect, 'أولف' );
+updateShippingPrice(1200); 
+	  
+	  
+    } else if (stateSelect.value === '2') { 
+     addCityOption(citySelect, 'تلعصة');
+addCityOption(citySelect, 'الزبوجة');
+addCityOption(citySelect, 'الحجاج');
+addCityOption(citySelect, 'أولاد بن عبد القادر');
+addCityOption(citySelect, 'عين مران');
+addCityOption(citySelect, 'بريرة');
+addCityOption(citySelect, 'أولاد عباس');
+addCityOption(citySelect, 'وادي الفضة');
+addCityOption(citySelect, 'بني راشد');
+addCityOption(citySelect, 'الهرانفة');
+addCityOption(citySelect, 'تاجنة');
+addCityOption(citySelect, 'المرسى');
+addCityOption(citySelect, 'الشلف');
+addCityOption(citySelect, 'أم الدروع');
+addCityOption(citySelect, 'سنجاس');
+addCityOption(citySelect, 'سيدي عبد الرحمن');
+addCityOption(citySelect, 'سيدي عكاشة');
+addCityOption(citySelect, 'تنس');
+addCityOption(citySelect, 'بني بوعتاب');
+addCityOption(citySelect, 'الكريمية');
+addCityOption(citySelect, 'حرشون');
+addCityOption(citySelect, 'بوزغاية');
+addCityOption(citySelect, 'تاوقريت');
+addCityOption(citySelect, 'بني حواء');
+addCityOption(citySelect, 'أبو الحسن');
+addCityOption(citySelect, 'وادي قوسين');
+addCityOption(citySelect, 'الشطية');
+addCityOption(citySelect, 'مصدق');
+addCityOption(citySelect, 'أولاد فارس');
+addCityOption(citySelect, 'بوقادير');
+addCityOption(citySelect, 'وادي سلي');
+addCityOption(citySelect, 'الصبحة');
+addCityOption(citySelect, 'بنايرية');
+addCityOption(citySelect, 'الأبيض مجاجة');
+addCityOption(citySelect, 'الظهرة');
+
+      updateShippingPrice(950); 
+  
+	  
+    } else if (stateSelect.value === '3') { 
+     addCityOption(citySelect, 'البيضاء');
+addCityOption(citySelect, 'قلتة سيدي سعد');
+addCityOption(citySelect, 'بريدة');
+addCityOption(citySelect, 'عين سيدي علي');
+addCityOption(citySelect, 'تاجموت');
+addCityOption(citySelect, 'الحاج مشري');
+addCityOption(citySelect, 'تاويالة');
+addCityOption(citySelect, 'الغيشة');
+addCityOption(citySelect, 'تاجرونة');
+addCityOption(citySelect, 'سبقاق');
+addCityOption(citySelect, 'سيدي بوزيد');
+addCityOption(citySelect, 'وادي مرة');
+addCityOption(citySelect, 'الأغواط');
+addCityOption(citySelect, 'وادي مزي');
+addCityOption(citySelect, 'قصر الحيران');
+addCityOption(citySelect, 'العسافية');
+addCityOption(citySelect, 'سيدي مخلوف');
+addCityOption(citySelect, 'حاسي الدلاعة');
+addCityOption(citySelect, 'حاسي الرمل');
+addCityOption(citySelect, 'عين ماضي');
+addCityOption(citySelect, 'الحويطة');
+addCityOption(citySelect, 'الخنق');
+addCityOption(citySelect, 'بن ناصر بن شهرة');
+addCityOption(citySelect, 'أفلو');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '4') { 
+      addCityOption(citySelect, 'فكيرينة');
+addCityOption(citySelect, 'الفجوج بوغرارة سعودي');
+addCityOption(citySelect, 'عين فكرون');
+addCityOption(citySelect, 'الرحية');
+addCityOption(citySelect, 'مسكيانة');
+addCityOption(citySelect, 'البلالة');
+addCityOption(citySelect, 'بحير الشرقي');
+addCityOption(citySelect, 'قصر الصباحي');
+addCityOption(citySelect, 'سوق نعمان');
+addCityOption(citySelect, 'أولاد زواي');
+addCityOption(citySelect, 'أم البواقي');
+addCityOption(citySelect, 'عين ببوش');
+addCityOption(citySelect, 'عين الزيتون');
+addCityOption(citySelect, 'بئر الشهداء');
+addCityOption(citySelect, 'عين البيضاء');
+addCityOption(citySelect, 'بريش');
+addCityOption(citySelect, 'الزرق');
+addCityOption(citySelect, 'عين مليلة');
+addCityOption(citySelect, 'أولاد قاسم');
+addCityOption(citySelect, 'أولاد حملة');
+addCityOption(citySelect, 'العامرية');
+addCityOption(citySelect, 'سيقوس');
+addCityOption(citySelect, 'وادي نيني');
+addCityOption(citySelect, 'عين الديس');
+addCityOption(citySelect, 'الضلعة');
+addCityOption(citySelect, 'الجازية');
+addCityOption(citySelect, 'عين كرشة');
+addCityOption(citySelect, 'الحرملية');
+addCityOption(citySelect, 'هنشير تومغني');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '5') { 
+     addCityOption(citySelect, 'معافة');
+addCityOption(citySelect, 'القصبات');
+addCityOption(citySelect, 'تيمقاد');
+addCityOption(citySelect, 'تاكسلانت');
+addCityOption(citySelect, 'أولاد سي سليمان');
+addCityOption(citySelect, 'لمسان');
+addCityOption(citySelect, 'تالخمت');
+addCityOption(citySelect, 'رأس العيون');
+addCityOption(citySelect, 'الرحبات');
+addCityOption(citySelect, 'أولاد سلام');
+addCityOption(citySelect, 'القيقبة');
+addCityOption(citySelect, 'ثنية العابد');
+addCityOption(citySelect, 'باتنة');
+addCityOption(citySelect, 'فسديس');
+addCityOption(citySelect, 'وادي الشعبة');
+addCityOption(citySelect, 'حيدوسة');
+addCityOption(citySelect, 'قصر بلزمة');
+addCityOption(citySelect, 'مروانة');
+addCityOption(citySelect, 'وادي الماء');
+addCityOption(citySelect, 'لازرو');
+addCityOption(citySelect, 'سريانة');
+addCityOption(citySelect, 'زانة البيضاء');
+addCityOption(citySelect, 'منعة');
+addCityOption(citySelect, 'تغرغار');
+addCityOption(citySelect, 'عين ياقوت');
+addCityOption(citySelect, 'بومية');
+addCityOption(citySelect, 'جرمة');
+addCityOption(citySelect, 'المعذر');
+addCityOption(citySelect, 'عيون العصافير');
+addCityOption(citySelect, 'تازولت');
+addCityOption(citySelect, 'بومقر');
+addCityOption(citySelect, 'نقاوس');
+addCityOption(citySelect, 'سفيان');
+addCityOption(citySelect, 'أريس');
+addCityOption(citySelect, 'تيغانمين');
+addCityOption(citySelect, 'عين جاسر');
+addCityOption(citySelect, 'الحاسي');
+addCityOption(citySelect, 'سقانة');
+addCityOption(citySelect, 'تيلاطو');
+addCityOption(citySelect, 'فم الطوب');
+addCityOption(citySelect, 'إشمول');
+addCityOption(citySelect, 'إينوغيسن');
+addCityOption(citySelect, 'بوزينة');
+addCityOption(citySelect, 'لارباع');
+addCityOption(citySelect, 'بولهيلات');
+addCityOption(citySelect, 'الشمرة');
+addCityOption(citySelect, 'بريكة');
+addCityOption(citySelect, 'بيطام');
+addCityOption(citySelect, 'إمدوكل');
+addCityOption(citySelect, 'عزيل عبد القادر');
+addCityOption(citySelect, 'الجزار');
+addCityOption(citySelect, 'أولاد عمار');
+addCityOption(citySelect, 'غسيرة');
+addCityOption(citySelect, 'كيمل');
+addCityOption(citySelect, 'تكوت');
+addCityOption(citySelect, 'عين التوتة');
+addCityOption(citySelect, 'بني فضالة الحقانية');
+addCityOption(citySelect, 'أولاد فاضل');
+addCityOption(citySelect, 'أولاد عوف');
+addCityOption(citySelect, 'شير');
+addCityOption(citySelect, 'وادي الطاقة');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '6') { 
+      addCityOption(citySelect, 'سيدي عياد');
+addCityOption(citySelect, 'برباشة');
+addCityOption(citySelect, 'الفلاي');
+addCityOption(citySelect, 'كنديرة');
+addCityOption(citySelect, 'سيدي عيش');
+addCityOption(citySelect, 'تيفرة');
+addCityOption(citySelect, 'تينبدار');
+addCityOption(citySelect, 'القصر');
+addCityOption(citySelect, 'فناية الماثن');
+addCityOption(citySelect, 'توجة');
+addCityOption(citySelect, 'ذراع القايد');
+addCityOption(citySelect, 'خراطة');
+addCityOption(citySelect, 'بجاية');
+addCityOption(citySelect, 'وادي غير');
+addCityOption(citySelect, 'بني معوش');
+addCityOption(citySelect, 'بني جليل');
+addCityOption(citySelect, 'فرعون');
+addCityOption(citySelect, 'سمعون');
+addCityOption(citySelect, 'تيمزريت');
+addCityOption(citySelect, 'مالبو');
+addCityOption(citySelect, 'سوق لإثنين');
+addCityOption(citySelect, 'تامريجت');
+addCityOption(citySelect, 'بوخليفة');
+addCityOption(citySelect, 'تالة حمزة');
+addCityOption(citySelect, 'تيشي');
+addCityOption(citySelect, 'أيت رزين');
+addCityOption(citySelect, 'إغيل علي');
+addCityOption(citySelect, 'أيت إسماعيل');
+addCityOption(citySelect, 'درقينة');
+addCityOption(citySelect, 'تاسكريوت');
+addCityOption(citySelect, 'أوقاس');
+addCityOption(citySelect, 'تيزي نبربر');
+addCityOption(citySelect, 'أدكار');
+addCityOption(citySelect, 'بني كسيلة');
+addCityOption(citySelect, 'تاوريرت إغيل');
+addCityOption(citySelect, 'أقبو');
+addCityOption(citySelect, 'شلاطة');
+addCityOption(citySelect, 'اغرم');
+addCityOption(citySelect, 'تامقرة');
+addCityOption(citySelect, 'أمالو');
+addCityOption(citySelect, 'بوحمزة');
+addCityOption(citySelect, 'مسيسنة');
+addCityOption(citySelect, 'صدوق');
+addCityOption(citySelect, 'بني مليكش');
+addCityOption(citySelect, 'بو جليل');
+addCityOption(citySelect, 'تازمالت');
+addCityOption(citySelect, 'أكفادو');
+addCityOption(citySelect, 'شميني');
+addCityOption(citySelect, 'سوق اوفلا');
+addCityOption(citySelect, 'طيبان');
+addCityOption(citySelect, 'أوزلاقن');
+addCityOption(citySelect, 'أميزور');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '7') { 
+      addCityOption(citySelect, 'الفيض');
+addCityOption(citySelect, 'ليشانة');
+addCityOption(citySelect, 'بوشقرون');
+addCityOption(citySelect, 'مخادمة');
+addCityOption(citySelect, 'جمورة');
+addCityOption(citySelect, 'برانيس');
+addCityOption(citySelect, 'الوطاية');
+addCityOption(citySelect, 'القنطرة');
+addCityOption(citySelect, 'خنقة سيدي ناجي');
+addCityOption(citySelect, 'عين زعطوط');
+addCityOption(citySelect, 'زريبة الوادي');
+addCityOption(citySelect, 'المزيرعة');
+addCityOption(citySelect, 'بسكرة');
+addCityOption(citySelect, 'الحاجب');
+addCityOption(citySelect, 'مليلي');
+addCityOption(citySelect, 'فوغالة');
+addCityOption(citySelect, 'الغروس');
+addCityOption(citySelect, 'برج بن عزوز');
+addCityOption(citySelect, 'أورلال');
+addCityOption(citySelect, 'أوماش');
+addCityOption(citySelect, 'عين الناقة');
+addCityOption(citySelect, 'شتمة');
+addCityOption(citySelect, 'الحوش');
+addCityOption(citySelect, 'سيدي عقبة');
+addCityOption(citySelect, 'مشونش');
+addCityOption(citySelect, 'ليوة');
+addCityOption(citySelect, 'طولقة');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '8') { 
+      addCityOption(citySelect, 'بشار');
+addCityOption(citySelect, 'بوكايس');
+addCityOption(citySelect, 'لحمر');
+addCityOption(citySelect, 'موغل');
+addCityOption(citySelect, 'المريجة');
+addCityOption(citySelect, 'تاغيت');
+addCityOption(citySelect, 'العبادلة');
+addCityOption(citySelect, 'عرق فراج');
+addCityOption(citySelect, 'مشرع هواري بومدين');
+addCityOption(citySelect, 'بني ونيف');
+addCityOption(citySelect, 'تبلبالة');
+addCityOption(citySelect, 'القنادسة');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '9') { 
+      addCityOption(citySelect, 'بني مراد');
+addCityOption(citySelect, 'اولاد سلامة');
+addCityOption(citySelect, 'موزاية');
+addCityOption(citySelect, 'حمام ملوان');
+addCityOption(citySelect, 'بوقرة');
+addCityOption(citySelect, 'صوحان');
+addCityOption(citySelect, 'الأربعاء');
+addCityOption(citySelect, 'الصومعة');
+addCityOption(citySelect, 'قرواو');
+addCityOption(citySelect, 'بوفاريك');
+addCityOption(citySelect, 'مفتاح');
+addCityOption(citySelect, 'الشفة');
+addCityOption(citySelect, 'عين الرمانة');
+addCityOption(citySelect, 'وادي جر');
+addCityOption(citySelect, 'العفرون');
+addCityOption(citySelect, 'أولاد يعيش');
+addCityOption(citySelect, 'الشريعة');
+addCityOption(citySelect, 'جبابرة');
+addCityOption(citySelect, 'وادي العلايق');
+addCityOption(citySelect, 'بن خليل');
+addCityOption(citySelect, 'بني تامو');
+addCityOption(citySelect, 'الشبلي');
+addCityOption(citySelect, 'بوعينان');
+addCityOption(citySelect, 'بوعرفة');
+addCityOption(citySelect, 'البليدة');
+
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '10') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '11') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '12') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '13') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '14') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '15') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '16') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '17') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '18') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '19') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '20') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '21') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '22') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '23') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '24') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '25') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '26') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '27') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '28') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '29') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '30') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '31') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '32') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '33') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '34') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '35') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '36') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '37') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '38') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '39') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '40') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '41') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '42') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '43') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '44') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '45') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '46') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '47') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '48') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '49') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '50') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '51') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '52') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '53') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '54') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '55') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '56') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '57') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  } else if (stateSelect.value === '58') { 
+      addCityOption(citySelect, 'الخروب');
+      updateShippingPrice(700); 
+	  
+	  
+    } else {
+      updateShippingPrice(0); // إعادة تحديد السعر إلى الصفر إذا كانت الولاية غير محددة
+    }
+  }
+
+  function updateShippingPrice(price) {
+    document.getElementById('shippingPrice').textContent = 'سعر توصيل للمنزل: ' + price + ' دج';
+    updateTotalPrice(); // تحديث المجموع بعد تحديد السعر
+  }
+
+  function updateTotalPrice() {
+    var productPrice = 1000; // سعر المنتج
+    var shippingPrice = parseFloat(document.getElementById('shippingPrice').textContent.split(':')[1].trim()); // سعر الشحن
+    var deliveryType = document.getElementById('deliveryType').value; // نوع التوصيل
+    var deliveryPrice = parseFloat(deliveryType === 'مكتب' ? 600 : 0); // سعر التوصيل
+    var totalPrice = productPrice + (deliveryType === 'مكتب' ? 0 : shippingPrice) + deliveryPrice; // إذا كان التوصيل للمنزل، لا يضاف سعر الشحن
+
+    // عرض الأسعار
+   document.getElementById('deliveryPrice').textContent = 'سعر توصيل للمكتب: ' + deliveryPrice + ' دج';
+    document.getElementById('totalPrice').textContent = 'المجموع: ' + totalPrice + ' دج';
+
+    // إخفاء سعر الشحن للمكتب إذا كان التوصيل للمنزل
+    document.getElementById('shippingPrice').style.display = (deliveryType === 'مكتب' ? 'none' : 'block');
+  }
+
+  function addCityOption(selectElement, city) {
+    var option = document.createElement('option');
+    option.text = city;
+    option.value = city;
+    selectElement.add(option);
+  }
+
+
+function submitData() {
+    var fullName = document.getElementById('fullName').value;
+    var phoneNumber = document.getElementById('phoneNumber').value;
+    var state = document.getElementById('state').value;
+    var city = document.getElementById('city').value;
+    var deliveryType = document.getElementById('deliveryType').value;
+    var productName = "اسم المنتج الثابت"; // اسم المنتج الثابت
+
+    // إرسال البيانات إلى جوجل فورمز
+    var formData = new FormData();
+    formData.append('entry.915079980', fullName); // استبدل '0987654321' برقم الحقل الخاص بالاسم في نموذج Google Forms
+    formData.append('entry.251773671', phoneNumber); // استبدل '1357924680' برقم الحقل الخاص برقم الهاتف في نموذج Google Forms
+    formData.append('entry.1090423596', state); // استبدل '2468013579' برقم الحقل الخاص بالولاية في نموذج Google Forms
+    formData.append('entry.518660943', city); // استبدل '3579246801' برقم الحقل الخاص بالبلدية في نموذج Google Forms
+    formData.append('entry.312069788', deliveryType); // استبدل '3579246801' برقم الحقل الخاص بالبلدية في نموذج Google Forms
+    formData.append('entry.1762811731', productName); // استبدل '1234567890' برقم الحقل الخاص بالمنتج في نموذج Google Forms
+
+	
+
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfMku1KRxpAzZIBS3MoGq-l82BcqdkBftCFNUfEebZpP_TUtA/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    })
+    .then(response => {
+        alert('تم إرسال البيانات بنجاح!');
+    })
+    .catch(error => {
+        console.error('حدث خطأ في إرسال البيانات:', error);
+        alert('حدث خطأ في إرسال البيانات!');
+    });
+}
+
+
+  // تنفيذ تحديث البلديات والشحن عند تحديد الولاية
+  document.getElementById('state').addEventListener('change', updateCitiesAndShipping);
+  document.getElementById('deliveryType').addEventListener('change', updateTotalPrice);
+</script>
+
+
+
+
+
+                  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+                  <link href="./assets/style2.css" rel="stylesheet" type="text/css">
+                  <link href="./assets/style3.css" rel="stylesheet" type="text/css">
+          
